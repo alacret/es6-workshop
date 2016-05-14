@@ -2,73 +2,72 @@
  * Created by alacret on 5/14/16.
  */
 
+"use strict";
 
-const bets = { crown: 0, anchor: 0, heart: 0, spade: 0, club: 0, diamond: 0 };
+const funds = 12;
+const funds2 = "12";
 
-let totalBet = rand(1, funds);
-
-if(totalBet === 7) {
-    totalBet = funds;
-    bets.heart = totalBet;
+if(funds == funds2) {
+    // console.log("IF normal");
 }else{
-        // distribute total bet
+    // console.log("ELSE");
 }
-funds = funds - totalBet;
 
-
-
-// While
-
-let funds = 50; // starting conditions
-while(funds > 1 && funds < 100) {
+if(funds === funds2) {
+    // console.log("IF estricto");
+}else{
+    // console.log("ELSE");
 }
+
+
+//While
+let fondos = 50; // starting conditions
+while(fondos > 1 && fondos < 100) {
+    if (Math.random() < 0.5)
+        fondos += 10; // funds = funds + 10;
+    else
+        fondos -= 10; // funds = funds - 10;
+}
+// console.log(fondos);
 
 
 // do while loop
 
-let remaining = totalBet;
+let fondos2 = 50; // starting conditions
 do{
-    let bet = rand(1, remaining);
-    let face = randFace();
-    bets[face] = bets[face] + bet;
-    remaining = remaining - bet;
-} while(remaining > 0);
+    if (Math.random() < 0.5)
+        fondos2 += 10; // funds = funds + 10;
+    else
+        fondos2 -= 10; // funds = funds - 10;
+}while(fondos2 > 1 && fondos2 < 100)
+// console.log(fondos2);
+
 
 // for loop
 
 let winnings = 0;
-for(let die=0; die < hand.length; die++) {
-    let face = hand[die];
-    if(bets[face] > 0)
-        winnings = winnings + bets[face];
+let aces = [
+    {spade:"Corazon Rojo",value:"A"},
+    {spade:"Corazon Negro",value:"A"},
+    {spade:"Diamantes",value:"A"},
+    {spade:"Cocada",value:"A"}
+];
+for(let card = 0; card < aces.length ; card++) {
+    break;
+    console.log("Throw an Ace:", aces[card].spade);
+    if (aces[card].spade === "Corazon Rojo"){
+        console.log("Lucky For you! The heart's pot");
+        winnings += 110;
+        continue;
+    }
+    if (aces[card].spade === "Diamantes"){
+        console.log("Dealer's Luck: The house win!");
+        winnings -= 30;
+        break;
+    }
+    winnings += 10;
 }
-funds = funds + winnings;
-
-/*
-break
-Breaks out of loop early.
-continue
-Skip to the next step in the loop.
-return
-Exits the current function (regardless of control flow). See Chapter 6.
-throw
- */
-
-switch(totalBet) {
-    case 7:
-        totalBet = funds;
-        break;
-    case 13:
-        funds = funds - 1; // give 1 pence to charity! case 11:
-        totalBet = 0;
-        break;
-    case 21:
-        totalBet = 21;
-        break;
-    default:
-        console.log("No superstition here!");
-        break;
-}
+// console.log("No more aces, score: ", winnings);
 
 // for IN
 const player = { name: 'Thomas', rank: 'Midshipman', age: 25 };
@@ -76,11 +75,19 @@ const player = { name: 'Thomas', rank: 'Midshipman', age: 25 };
 for(let prop in player) {
     if(!player.hasOwnProperty(prop))
         continue; // see explanation below
-    console.log(prop + ': ' + player[prop]);
+    // console.log(prop + ': ' + player[prop]);
 }
 
-
-// For off
-
-const hand = [randFace(), randFace(), randFace()]; for(let face of hand)
-console.log(`You rolled...${face}!`);
+let diceRoll = 13233;
+switch(diceRoll) {
+    case 7:
+        console.log("Lucky 7");
+    case 13:
+        console.log("13! Bad Luck");
+    case 7:
+        console.log("Black Jack Dices");
+        break;
+    default:
+        console.log("Try again");
+        break;
+}

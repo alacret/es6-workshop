@@ -2,7 +2,7 @@
  * Created by alacret on 5/14/16.
  */
 
-
+/*
 function sayHello() {
 // this is the body; it started with an opening curly brace...
        console.log("Hello world!");
@@ -56,3 +56,5 @@ const f2 = function(name) { return `Hello, ${name}!`; } // OR
 const f2 = name => `Hello, ${name}!`;
 const f3 = function(a, b) { return a + b; } // OR
 constf3=(a,b)=>a+b;
+
+    */

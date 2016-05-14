@@ -2,8 +2,9 @@
  * Created by alacret on 5/13/16.
  */
 
+"use strict";
 
-let count = 10; // integer literal; count is still a double
+let count = 10;
 const blue = 0x0000ff; // hexadecimal (hex ff = decimal 255)
 const umask = 0o0022; // octal (octal 22 = decimal 18)
 const roomTemp = 21.5; // decimal
@@ -13,6 +14,10 @@ const inf = Infinity;
 const ninf = -Infinity;
 const nan = NaN; // "not a number"
 
+console.log(blue);
+console.log(roomTemp);
+console.log(e);
+console.log(Number.EPSILON);
 
 
 
